@@ -1,6 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Blog, Comment
-from .forms import CommentForm
+from django.shortcuts import render, get_object_or_404
+from .models import Blog
 
 
 # Create your views here.
@@ -13,17 +12,11 @@ def all_blogs(request):
 
 def blog_detail(request, blog_id):
     blog = get_object_or_404(Blog, id=blog_id)
-    form = CommentForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            form.instance.user = request.user
-            form.instance.blog_detail = blog_detail
-            form.save()
-            return redirect('blog/blog_detail', blog_id= blog_id)
+
 
     context = {
         'blog':blog,
-        'form':form,
+
 
     }
     return render(request, 'blog/blog_detail.html', context)
