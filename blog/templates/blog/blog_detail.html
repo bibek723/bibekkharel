@@ -42,7 +42,7 @@
                     <p class="mb-0">{{ blog.date }}</p>
 
                     <h3 class="mb-2">{{ blog.title }}</h3>
-                    <img class="card-img-top" style="width: 18rem;" src="{{ blog.thumbnail.url }}" alt="Card image cap">
+                    <img class="card-img-top" style="width: 18rem;" src="{{ MEDIA_URL }}{{ blog.thumbnail.url }}" alt="Card image cap">
                     <p>{{ blog.content|safe  }}</p>
 
 

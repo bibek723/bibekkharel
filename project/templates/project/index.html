@@ -174,7 +174,7 @@
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. I like to ride travel.I riding, free climbing</p>
+                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. I like to ride, travel,hike, trekking</p>
                     
                 </div>
             </section>
@@ -187,7 +187,7 @@
                     {% for item in projects %}
                     <div class="row">
                    <div class="card" style="width: 18rem;">
-                       <a href="{{ item.get_absolute_url }}"> <img class="card-img-top" src="{{ item.image.url }}" alt="Card image cap"></a>
+                       <a href="{{ item.get_absolute_url }}"> <img class="card-img-top" src="{{ MEDIA_URL }}{{ item.image.url }}" alt="Card image cap"></a>
                    <div class="card-body">
                        <a href="{{ item.get_absolute_url }}"><h5 class="card-title">{{ item.title }}</h5></a>
                        <a href="{{ item.get_absolute_url }}"><p class="card-text">{{ item.description|truncatechars:50 }}</p></a>

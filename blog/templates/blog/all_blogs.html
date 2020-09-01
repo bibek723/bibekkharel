@@ -38,7 +38,7 @@
                 <div class="resume-section-content">
                     {% for blog in blogs %}
                     <a href="{{ blog.get_absolute_url }}"> <h3 class="mb-2">{{ blog.title }}</h3></a>
-                    <a href="{{ blog.get_absolute_url }}"> <img class="card-img-top" style="width: 18rem;" src="{{ blog.thumbnail.url }}" alt="Card image cap"></a>
+                    <a href="{{ blog.get_absolute_url }}"> <img class="card-img-top" style="width: 18rem;" src="{{ MEDIA_URL }}{{ blog.thumbnail.url }}" alt="Card image cap"></a>
                     <a href="{{ blog.get_absolute_url }}">  <p>{{ blog.content|truncatechars:100}}</p></a>
 
 
